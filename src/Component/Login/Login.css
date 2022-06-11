@@ -1,0 +1,21 @@
+.main-background{
+    background-color: #9A616D;
+}
+.card-style{
+    border-radius: 1rem;
+}
+.image-style{
+    border-radius: 1rem 0 0 1rem;
+}
+.logo-style{
+    color: #ff6219;
+}
+.sign-into-account{
+    letter-spacing: 1px;
+}
+.dont-have-account{
+    color: #393f81;
+}
+.register{
+    color: #393f81;
+}
