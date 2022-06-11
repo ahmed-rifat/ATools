@@ -8,18 +8,14 @@ const Login = () => {
     const [email, setEmail] =useState('');
     const [password, setPassword] =useState('');
     const [token, setToken] =useState('');
-    const userToken = token.token;
+    const userToken= (token?.token);
     
    
 
     
     const formSubmit =()=> {
-      if(password)  {
-        Swal.fire({
-          icon: 'success',
-          title: 'Login Success',
-          text: (userToken),
-        })
+      
+      if(password) {
       const userData= {
         email : email,
         password: password
@@ -36,7 +32,14 @@ const Login = () => {
   .then(result => {
       setToken(result);
   })
-}else{
+  if(userToken){
+    Swal.fire({
+      icon: 'success',
+      title: 'Login Success',
+      text: (userToken),
+    })
+  }
+} else{
   Swal.fire({
     icon: 'error',
     title: 'Oops...',
