@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import "./Login.css"
-import { Toaster , toast} from 'react-hot-toast';
+import Swal from 'sweetalert2'
+
 
 
 const Login = () => {
     const [email, setEmail] =useState('');
     const [password, setPassword] =useState('');
     const [token, setToken] =useState('');
+    const userToken = token.token;
     
-    
+   
 
     
     const formSubmit =()=> {
       if(password)  {
-        alert(token.token)
+        Swal.fire({
+          icon: 'success',
+          title: 'Login Success',
+          text: (userToken),
+        })
       const userData= {
         email : email,
         password: password
@@ -31,7 +37,11 @@ const Login = () => {
       setToken(result);
   })
 }else{
-  alert('Missing Password')
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Missing Password!',
+  })
 }
 
  
