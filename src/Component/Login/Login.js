@@ -6,13 +6,14 @@ import { Toaster , toast} from 'react-hot-toast';
 const Login = () => {
     const [email, setEmail] =useState('');
     const [password, setPassword] =useState('');
+    const [token, setToken] =useState('');
     
     
 
     
     const formSubmit =()=> {
       if(password)  {
-        alert('Successfully added!')
+        alert(token.token)
       const userData= {
         email : email,
         password: password
@@ -27,10 +28,10 @@ const Login = () => {
   })
   .then(res=>res.json())
   .then(result => {
-      console.log(result);
+      setToken(result);
   })
 }else{
-  alert('failed')
+  alert('Missing Password')
 }
 
  
